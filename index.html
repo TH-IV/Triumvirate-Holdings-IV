@@ -3,241 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Triumvirate Holdings IV</title>
+<title>Triumvirate Holdings IV Hotel</title>
 
+<!-- Bootstrap CSS for layout -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom Styles -->
 <style>
-body {
-  margin: 0;
-  font-family: 'Georgia', serif;
-  background: #f5f5f5;
-  color: #222;
-  text-align: center;
-}
+/* GENERAL */
+body {margin:0; font-family: Arial, sans-serif; background:#f5f5f5;}
 
-/* PUBLIC HOTEL STYLE */
-header {
-  background: black;
-  color: gold;
-  padding: 20px;
-  font-size: 24px;
-  letter-spacing: 2px;
-  cursor: pointer;
-}
+/* NAVBAR */
+nav {background: rgba(0,0,0,0.8);}
+nav a {color:white; font-size:16px;}
 
-.section {
-  padding: 60px 20px;
-}
+/* CAROUSEL HERO */
+.carousel-caption {background: rgba(0,0,0,0.4); padding:1rem; border-radius:8px;}
+.hero-slide img {height:500px; object-fit:cover;}
 
-button {
-  padding: 10px 20px;
-  background: gold;
-  border: none;
-  cursor: pointer;
-}
+/* SECTION TITLES */
+.section-title {font-size:32px; font-weight:bold; margin:40px 0 20px 0; text-align:center;}
 
-/* SECRET UI */
-#imperium {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  color: #00ff9f;
-  display: none;
-  padding: 20px;
-  font-family: monospace;
-  text-align: left;
-  overflow-y: auto;
-}
+/* ROOM CARDS */
+.card-custom img {height:200px; object-fit:cover;}
 
-#terminal {
-  white-space: pre-line;
-}
+/* FOOTER */
+footer {background:#222; color:white; padding:20px;}
 
-.hiddenInput {
-  display: none;
-  margin-top: 20px;
-}
-
-.glitch {
-  color: red;
-  animation: glitch 0.3s infinite;
-}
-
-@keyframes glitch {
-  0% {opacity:1;}
-  50% {opacity:0.2;}
-  100% {opacity:1;}
-}
+/* SECRET SYSTEM */
+#imperium {position:fixed; top:0; left:0; width:100%; height:100%; background:black; color:#00ff9f; display:none; padding:20px; font-family: monospace; text-align:left; overflow-y:auto;}
+#terminal {white-space: pre-line;}
+.hiddenInput {display:none; margin-top:20px;}
+.glitch {color:red; animation: glitch 0.3s infinite;}
+@keyframes glitch {0% {opacity:1;}50% {opacity:0.2;}100% {opacity:1;}}
 </style>
 </head>
 
 <body>
 
-<header id="logo">TRIUMVIRATE HOLDINGS IV</header>
-
-<div class="section">
-  <h1>Luxury Stay in Rome</h1>
-  <p>Experience timeless elegance near the Colosseum.</p>
-
-  <div class="hiddenInput" id="secretBox">
-    <input id="code" placeholder="Enter Access Code">
-    <button onclick="enterCode()">Enter</button>
+<!-- NAVIGATION -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand text-white" id="logo" href="#">TRIUMVIRATE IV</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="#amenities">Amenities</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<div id="heroCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active hero-slide">
+      <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/interior-1868667_1280.jpg" class="d-block w-100" alt="Luxury Interior">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Luxury & Elegance in Rome</h1>
+        <p>Stay with timeless grandeur near world heritage.</p>
+      </div>
+    </div>
+    <div class="carousel-item hero-slide">
+      <img src="https://cdn.pixabay.com/photo/2017/08/06/22/54/hotel-room-2592241_1280.jpg" class="d-block w-100" alt="Suite Room">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>World Class Suites</h1>
+        <p>Comfort redefined beyond imagination.</p>
+      </div>
+    </div>
+    <div class="carousel-item hero-slide">
+      <img src="https://cdn.pixabay.com/photo/2016/11/23/14/45/luxury-1853909_1280.jpg" class="d-block w-100" alt="Resort Exterior">
+      <div class="carousel-caption d-none d-md-block">
+        <h1>Unforgettable Experiences</h1>
+        <p>Explore Rome with curated luxury tours.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+  <button class="carousel-control-next" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
 </div>
 
-<!-- SECRET SYSTEM -->
-<div id="imperium">
-  <div id="terminal"></div>
-  <br>
-  <button onclick="cycle()">Execute Command</button>
+<!-- ROOMS -->
+<section id="rooms" class="container">
+  <h2 class="section-title">Featured Rooms</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card card-custom">
+        <img src="https://cdn.pixabay.com/photo/2017/10/12/21/38/interior-2844086_1280.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Deluxe Room</h5>
+          <p class="card-text">Spacious room with city views and luxurious amenities.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-custom">
+        <img src="https://cdn.pixabay.com/photo/2016/11/21/12/46/rome-1840259_1280.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Executive Suite</h5>
+          <p class="card-text">Elegant suite with panoramic vista and premium service.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-custom">
+        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/luxury-1839656_1280.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Presidential Suite</h5>
+          <p class="card-text">Top‑tier luxury experience for distinguished guests.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section id="amenities" class="container text-center">
+  <h2 class="section-title">World‑Class Amenities</h2>
+  <ul style="list-style:none; padding:0; font-size:18px;">
+    <li>• Rooftop Terrace & Bar</li>
+    <li>• Spa & Wellness Center</li>
+    <li>• Fine Dining Restaurant</li>
+    <li>• Concierge & City Tours</li>
+    <li>• Complimentary Wi‑Fi</li>
+  </ul>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="container">
+  <h2 class="section-title">Gallery</h2>
+  <div class="row g-3">
+    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/09/03/13/12/hotel-2703242_1280.jpg" class="img-fluid rounded"></div>
+    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/interior-1868667_1280.jpg" class="img-fluid rounded"></div>
+    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/07/31/11/02/architecture-2557921_1280.jpg" class="img-fluid rounded"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="text-center p-5 bg-light">
+  <h2 class="section-title">Contact & Reservations</h2>
+  <p>Call +39 06 XXX XXXX or email reservations@triumhotel.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center">
+  <p>© 2026 Triumvirate Holdings IV Hotel</p>
+</footer>
+
+<!-- SECRET INPUT (Hidden until activated) -->
+<div class="hiddenInput" id="secretBox">
+  <input id="code" placeholder="Enter Access Code">
+  <button onclick="enterCode()">Enter</button>
 </div>
 
+<!-- SECRET IMPERIUM SYSTEM -->
+<div id="imperium"></div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- SECRET SYSTEM JS -->
 <script>
 let clicks = 0;
 let state = "LOCKED";
 let rank = "CIVIS";
 let clearance = 0;
-
 const PASSWORD = "TriumSPQR";
+const sectors = ["COLOSSEUM IX","VATICAN SHADOW GRID","TIBER SUBLEVEL","FORUM NODE","PALATINE CORE"];
+const laws = ["LEX TEMPORIS","LEX OCCULTUS","LEX IMPERIUM","LEX SANGUINIS"];
 
-const sectors = [
-  "COLOSSEUM IX",
-  "VATICAN SHADOW GRID",
-  "TIBER SUBLEVEL",
-  "FORUM NODE",
-  "PALATINE CORE"
-];
-
-const laws = [
-  "LEX TEMPORIS",
-  "LEX OCCULTUS",
-  "LEX IMPERIUM",
-  "LEX SANGUINIS"
-];
-
-// Reveal input after 3 clicks
 document.getElementById("logo").onclick = () => {
   clicks++;
-  if (clicks >= 3) {
-    document.getElementById("secretBox").style.display = "block";
-  }
+  if (clicks >= 3) document.getElementById("secretBox").style.display = "block";
 };
 
 function enterCode() {
   let val = document.getElementById("code").value;
-
-  if (val === PASSWORD) {
-    activate();
-  } else {
-    alert("Access Denied");
-  }
+  if (val === PASSWORD) activate();
+  else alert("Access Denied");
 }
 
 function activate() {
-  document.getElementById("imperium").style.display = "block";
-  type([
-    "INITIALIZING IMPERIUM CORE...",
-    "SCANNING...",
-    "WELCOME, OPERATIVE.",
-    "ROME NEVER FELL."
-  ], mainMenu);
+  document.getElementById("imperium").style.display="block";
+  type(["INITIALIZING IMPERIUM CORE...","SCANNING...","WELCOME, OPERATIVE.","ROME NEVER FELL."], mainMenu);
 }
 
 function type(lines, callback) {
-  let i = 0;
-  let terminal = document.getElementById("terminal");
-  terminal.innerHTML = "";
-
-  function next() {
-    if (i < lines.length) {
-      terminal.innerHTML += lines[i] + "\\n";
-      i++;
-      setTimeout(next, 700);
-    } else if (callback) callback();
-  }
-
+  let i=0;
+  let terminal=document.getElementById("imperium");
+  function next(){if(i<lines.length){terminal.innerHTML+=lines[i]+"\\n";i++;setTimeout(next,700);}else if(callback) callback();}
   next();
 }
 
 function mainMenu() {
-  document.getElementById("terminal").innerHTML += `
-  
-=== IMPERIUM DASHBOARD ===
-
-RANK: ${rank}
-CLEARANCE: ${clearance}
-
-Execute to continue...
-`;
-  state = "ACTIVE";
+  document.getElementById("imperium").innerHTML+="\\n=== IMPERIUM DASHBOARD ===\\nRANK: "+rank+"\\nCLEARANCE: "+clearance+"\\nExecute to continue...\\n";
+  state="ACTIVE";
 }
 
 function cycle() {
-  if (state !== "ACTIVE") return;
-
-  let r = Math.floor(Math.random() * 5);
-
-  if (r === 0) senate();
-  if (r === 1) legion();
-  if (r === 2) archive();
-  if (r === 3) world();
-  if (r === 4) rankUp();
+  if(state!=="ACTIVE") return;
+  let r=Math.floor(Math.random()*5);
+  if(r===0) senate();
+  if(r===1) legion();
+  if(r===2) archive();
+  if(r===3) world();
+  if(r===4) rankUp();
 }
 
-function senate() {
-  let law = laws[Math.floor(Math.random() * laws.length)];
-  type([
-    "ACCESSING SENATE...",
-    law,
-    "DECREE ENFORCED"
-  ]);
-}
-
-function legion() {
-  let sector = sectors[Math.floor(Math.random() * sectors.length)];
-  type([
-    "LEGION DEPLOYED",
-    "TARGET: " + sector,
-    "MISSION: MAINTAIN VEIL"
-  ]);
-}
-
-function archive() {
-  type([
-    "ACCESSING ARCHIVES...",
-    "ROME EXISTS BENEATH REALITY.",
-    "THE IMPERIUM CONTROLS ALL."
-  ]);
-}
-
-function world() {
-  let instability = Math.floor(Math.random() * 100);
-  type([
-    "WORLD SCAN...",
-    "INSTABILITY: " + instability + "%",
-    "CIVILIANS UNAWARE"
-  ]);
-}
-
-function rankUp() {
-  clearance++;
-  const ranks = ["CIVIS","LEGIONARY","CENTURION","SENATOR","CONSUL"];
-
-  if (clearance < ranks.length) {
-    rank = ranks[clearance];
-    type([
-      "PROMOTION GRANTED",
-      "NEW RANK: " + rank
-    ]);
-  } else {
-    type([
-      "MAX RANK",
-      "YOU ARE THE IMPERIUM"
-    ]);
-  }
-}
+function senate(){type(["ACCESSING SENATE...",laws[Math.floor(Math.random()*laws.length)],"DECREE ENFORCED"]);}
+function legion(){type(["LEGION DEPLOYED","TARGET: "+sectors[Math.floor(Math.random()*sectors.length)],"MISSION: MAINTAIN VEIL"]);}
+function archive(){type(["ACCESSING ARCHIVES...","ROME EXISTS BENEATH REALITY.","THE IMPERIUM CONTROLS ALL."]);}
+function world(){type(["WORLD SCAN...","INSTABILITY: "+Math.floor(Math.random()*100)+"%","CIVILIANS UNAWARE"]);}
+function rankUp(){clearance++;const ranks=["CIVIS","LEGIONARY","CENTURION","SENATOR","CONSUL"];if(clearance<ranks.length){rank=ranks[clearance];type(["PROMOTION GRANTED","NEW RANK: "+rank]);}else{type(["MAX RANK","YOU ARE THE IMPERIUM"]);}}
 </script>
 
 </body>

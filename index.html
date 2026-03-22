@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Triumvirate Holdings IV</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #f5f5f5;
+  color: #222;
+  text-align: center;
+}
+
+/* PUBLIC HOTEL STYLE */
+header {
+  background: black;
+  color: gold;
+  padding: 20px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background: gold;
+  border: none;
+  cursor: pointer;
+}
+
+/* SECRET UI */
+#imperium {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: #00ff9f;
+  display: none;
+  padding: 20px;
+  font-family: monospace;
+  text-align: left;
+  overflow-y: auto;
+}
+
+#terminal {
+  white-space: pre-line;
+}
+
+.hiddenInput {
+  display: none;
+  margin-top: 20px;
+}
+
+.glitch {
+  color: red;
+  animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+  0% {opacity:1;}
+  50% {opacity:0.2;}
+  100% {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<header id="logo">TRIUMVIRATE HOLDINGS IV</header>
+
+<div class="section">
+  <h1>Luxury Stay in Rome</h1>
+  <p>Experience timeless elegance near the Colosseum.</p>
+
+  <div class="hiddenInput" id="secretBox">
+    <input id="code" placeholder="Enter Access Code">
+    <button onclick="enterCode()">Enter</button>
+  </div>
+</div>
+
+<!-- SECRET SYSTEM -->
+<div id="imperium">
+  <div id="terminal"></div>
+  <br>
+  <button onclick="cycle()">Execute Command</button>
+</div>
+
+<script>
+let clicks = 0;
+let state = "LOCKED";
+let rank = "CIVIS";
+let clearance = 0;
+
+const PASSWORD = "TriumSPQR";
+
+const sectors = [
+  "COLOSSEUM IX",
+  "VATICAN SHADOW GRID",
+  "TIBER SUBLEVEL",
+  "FORUM NODE",
+  "PALATINE CORE"
+];
+
+const laws = [
+  "LEX TEMPORIS",
+  "LEX OCCULTUS",
+  "LEX IMPERIUM",
+  "LEX SANGUINIS"
+];
+
+// Reveal input after 3 clicks
+document.getElementById("logo").onclick = () => {
+  clicks++;
+  if (clicks >= 3) {
+    document.getElementById("secretBox").style.display = "block";
+  }
+};
+
+function enterCode() {
+  let val = document.getElementById("code").value;
+
+  if (val === PASSWORD) {
+    activate();
+  } else {
+    alert("Access Denied");
+  }
+}
+
+function activate() {
+  document.getElementById("imperium").style.display = "block";
+  type([
+    "INITIALIZING IMPERIUM CORE...",
+    "SCANNING...",
+    "WELCOME, OPERATIVE.",
+    "ROME NEVER FELL."
+  ], mainMenu);
+}
+
+function type(lines, callback) {
+  let i = 0;
+  let terminal = document.getElementById("terminal");
+  terminal.innerHTML = "";
+
+  function next() {
+    if (i < lines.length) {
+      terminal.innerHTML += lines[i] + "\\n";
+      i++;
+      setTimeout(next, 700);
+    } else if (callback) callback();
+  }
+
+  next();
+}
+
+function mainMenu() {
+  document.getElementById("terminal").innerHTML += `
+  
+=== IMPERIUM DASHBOARD ===
+
+RANK: ${rank}
+CLEARANCE: ${clearance}
+
+Execute to continue...
+`;
+  state = "ACTIVE";
+}
+
+function cycle() {
+  if (state !== "ACTIVE") return;
+
+  let r = Math.floor(Math.random() * 5);
+
+  if (r === 0) senate();
+  if (r === 1) legion();
+  if (r === 2) archive();
+  if (r === 3) world();
+  if (r === 4) rankUp();
+}
+
+function senate() {
+  let law = laws[Math.floor(Math.random() * laws.length)];
+  type([
+    "ACCESSING SENATE...",
+    law,
+    "DECREE ENFORCED"
+  ]);
+}
+
+function legion() {
+  let sector = sectors[Math.floor(Math.random() * sectors.length)];
+  type([
+    "LEGION DEPLOYED",
+    "TARGET: " + sector,
+    "MISSION: MAINTAIN VEIL"
+  ]);
+}
+
+function archive() {
+  type([
+    "ACCESSING ARCHIVES...",
+    "ROME EXISTS BENEATH REALITY.",
+    "THE IMPERIUM CONTROLS ALL."
+  ]);
+}
+
+function world() {
+  let instability = Math.floor(Math.random() * 100);
+  type([
+    "WORLD SCAN...",
+    "INSTABILITY: " + instability + "%",
+    "CIVILIANS UNAWARE"
+  ]);
+}
+
+function rankUp() {
+  clearance++;
+  const ranks = ["CIVIS","LEGIONARY","CENTURION","SENATOR","CONSUL"];
+
+  if (clearance < ranks.length) {
+    rank = ranks[clearance];
+    type([
+      "PROMOTION GRANTED",
+      "NEW RANK: " + rank
+    ]);
+  } else {
+    type([
+      "MAX RANK",
+      "YOU ARE THE IMPERIUM"
+    ]);
+  }
+}
+</script>
+
+</body>
+</html>

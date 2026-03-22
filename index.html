@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF‑8">
+<meta name="viewport" content="width=device‑width, initial‑scale=1.0">
 <title>Triumvirate Holdings IV Hotel</title>
 
 <!-- Bootstrap CSS for layout -->
@@ -10,32 +10,18 @@
 
 <!-- Custom Styles -->
 <style>
-/* GENERAL */
 body {margin:0; font-family: Arial, sans-serif; background:#f5f5f5;}
-
-/* NAVBAR */
 nav {background: rgba(0,0,0,0.8);}
 nav a {color:white; font-size:16px;}
-
-/* CAROUSEL HERO */
 .carousel-caption {background: rgba(0,0,0,0.4); padding:1rem; border-radius:8px;}
 .hero-slide img {height:500px; object-fit:cover;}
-
-/* SECTION TITLES */
 .section-title {font-size:32px; font-weight:bold; margin:40px 0 20px 0; text-align:center;}
-
-/* ROOM CARDS */
 .card-custom img {height:200px; object-fit:cover;}
-
-/* FOOTER */
 footer {background:#222; color:white; padding:20px;}
 
 /* SECRET SYSTEM */
-#imperium {position:fixed; top:0; left:0; width:100%; height:100%; background:black; color:#00ff9f; display:none; padding:20px; font-family: monospace; text-align:left; overflow-y:auto;}
-#terminal {white-space: pre-line;}
+#imperium {position:fixed; top:0; left:0; width:100%; height:100%; background:black; color:#00ff9f; display:none; padding:20px; font-family:monospace; text-align:left; overflow:auto;}
 .hiddenInput {display:none; margin-top:20px;}
-.glitch {color:red; animation: glitch 0.3s infinite;}
-@keyframes glitch {0% {opacity:1;}50% {opacity:0.2;}100% {opacity:1;}}
 </style>
 </head>
 
@@ -64,56 +50,60 @@ footer {background:#222; color:white; padding:20px;}
 <div id="heroCarousel" class="carousel slide">
   <div class="carousel-inner">
     <div class="carousel-item active hero-slide">
-      <img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/interior-1868667_1280.jpg" class="d-block w-100" alt="Luxury Interior">
+      <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" class="d-block w-100" alt="Luxury Interior">
       <div class="carousel-caption d-none d-md-block">
         <h1>Luxury & Elegance in Rome</h1>
         <p>Stay with timeless grandeur near world heritage.</p>
       </div>
     </div>
-    <div class="carousel-item hero-slide">
-      <img src="https://cdn.pixabay.com/photo/2017/08/06/22/54/hotel-room-2592241_1280.jpg" class="d-block w-100" alt="Suite Room">
+    <div class="carousel-item hero‑slide">
+      <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" class="d-block w-100" alt="Suite Room">
       <div class="carousel-caption d-none d-md-block">
-        <h1>World Class Suites</h1>
+        <h1>World‑Class Suites</h1>
         <p>Comfort redefined beyond imagination.</p>
       </div>
     </div>
-    <div class="carousel-item hero-slide">
-      <img src="https://cdn.pixabay.com/photo/2016/11/23/14/45/luxury-1853909_1280.jpg" class="d-block w-100" alt="Resort Exterior">
+    <div class="carousel-item hero‑slide">
+      <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg" class="d-block w-100" alt="Resort Exterior">
       <div class="carousel-caption d-none d-md-block">
         <h1>Unforgettable Experiences</h1>
         <p>Explore Rome with curated luxury tours.</p>
       </div>
     </div>
   </div>
-  <button class="carousel-control-prev" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-  <button class="carousel-control-next" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+  <button class="carousel-control-prev" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
 </div>
 
 <!-- ROOMS -->
 <section id="rooms" class="container">
   <h2 class="section-title">Featured Rooms</h2>
-  <div class="row g-4">
-    <div class="col-md-4">
-      <div class="card card-custom">
-        <img src="https://cdn.pixabay.com/photo/2017/10/12/21/38/interior-2844086_1280.jpg" class="card-img-top">
+  <div class="row g‑4">
+    <div class="col-md‑4">
+      <div class="card card‑custom">
+        <img src="https://images.pexels.com/photos/164338/pexels-photo-164338.jpeg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Deluxe Room</h5>
           <p class="card-text">Spacious room with city views and luxurious amenities.</p>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card card-custom">
-        <img src="https://cdn.pixabay.com/photo/2016/11/21/12/46/rome-1840259_1280.jpg" class="card-img-top">
+    <div class="col-md‑4">
+      <div class="card card‑custom">
+        <img src="https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Executive Suite</h5>
           <p class="card-text">Elegant suite with panoramic vista and premium service.</p>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card card-custom">
-        <img src="https://cdn.pixabay.com/photo/2016/11/19/14/00/luxury-1839656_1280.jpg" class="card-img-top">
+    <div class="col-md‑4">
+      <div class="card card‑custom">
+        <img src="https://images.pexels.com/photos/164531/pexels-photo-164531.jpeg" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">Presidential Suite</h5>
           <p class="card-text">Top‑tier luxury experience for distinguished guests.</p>
@@ -138,22 +128,28 @@ footer {background:#222; color:white; padding:20px;}
 <!-- GALLERY -->
 <section id="gallery" class="container">
   <h2 class="section-title">Gallery</h2>
-  <div class="row g-3">
-    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/09/03/13/12/hotel-2703242_1280.jpg" class="img-fluid rounded"></div>
-    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2016/11/29/03/53/interior-1868667_1280.jpg" class="img-fluid rounded"></div>
-    <div class="col-md-4"><img src="https://cdn.pixabay.com/photo/2017/07/31/11/02/architecture-2557921_1280.jpg" class="img-fluid rounded"></div>
+  <div class="row g‑3">
+    <div class="col-md‑4">
+      <img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" class="img-fluid rounded">
+    </div>
+    <div class="col-md‑4">
+      <img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" class="img-fluid rounded">
+    </div>
+    <div class="col-md‑4">
+      <img src="https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg" class="img-fluid rounded">
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="text-center p-5 bg-light">
+<section id="contact" class="text-center p‑5 bg‑light">
   <h2 class="section-title">Contact & Reservations</h2>
-  <p>Call +39 06 XXX XXXX or email reservations@triumhotel.com</p>
+  <p>Call +39 06 1234 5678 or email reservations@triumhotel.com</p>
 </section>
 
 <!-- FOOTER -->
 <footer class="text-center">
-  <p>© 2026 Triumvirate Holdings IV Hotel</p>
+  <p>© 2026 Triumvirate Holdings IV Hotel</p>
 </footer>
 
 <!-- SECRET INPUT (Hidden until activated) -->
@@ -184,8 +180,7 @@ document.getElementById("logo").onclick = () => {
 };
 
 function enterCode() {
-  let val = document.getElementById("code").value;
-  if (val === PASSWORD) activate();
+  if (document.getElementById("code").value === PASSWORD) activate();
   else alert("Access Denied");
 }
 
@@ -196,31 +191,15 @@ function activate() {
 
 function type(lines, callback) {
   let i=0;
-  let terminal=document.getElementById("imperium");
-  function next(){if(i<lines.length){terminal.innerHTML+=lines[i]+"\\n";i++;setTimeout(next,700);}else if(callback) callback();}
+  let term=document.getElementById("imperium");
+  function next(){if(i<lines.length){term.innerHTML+=lines[i]+"\n";i++;setTimeout(next,700);} else if(callback) callback();}
   next();
 }
 
 function mainMenu() {
-  document.getElementById("imperium").innerHTML+="\\n=== IMPERIUM DASHBOARD ===\\nRANK: "+rank+"\\nCLEARANCE: "+clearance+"\\nExecute to continue...\\n";
+  document.getElementById("imperium").innerHTML+="\n=== IMPERIUM DASHBOARD ===\nRANK: "+rank+"\nCLEARANCE: "+clearance+"\nExecute to continue...\n";
   state="ACTIVE";
 }
-
-function cycle() {
-  if(state!=="ACTIVE") return;
-  let r=Math.floor(Math.random()*5);
-  if(r===0) senate();
-  if(r===1) legion();
-  if(r===2) archive();
-  if(r===3) world();
-  if(r===4) rankUp();
-}
-
-function senate(){type(["ACCESSING SENATE...",laws[Math.floor(Math.random()*laws.length)],"DECREE ENFORCED"]);}
-function legion(){type(["LEGION DEPLOYED","TARGET: "+sectors[Math.floor(Math.random()*sectors.length)],"MISSION: MAINTAIN VEIL"]);}
-function archive(){type(["ACCESSING ARCHIVES...","ROME EXISTS BENEATH REALITY.","THE IMPERIUM CONTROLS ALL."]);}
-function world(){type(["WORLD SCAN...","INSTABILITY: "+Math.floor(Math.random()*100)+"%","CIVILIANS UNAWARE"]);}
-function rankUp(){clearance++;const ranks=["CIVIS","LEGIONARY","CENTURION","SENATOR","CONSUL"];if(clearance<ranks.length){rank=ranks[clearance];type(["PROMOTION GRANTED","NEW RANK: "+rank]);}else{type(["MAX RANK","YOU ARE THE IMPERIUM"]);}}
 </script>
 
 </body>
